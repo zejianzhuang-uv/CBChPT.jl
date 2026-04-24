@@ -1,0 +1,7 @@
+name = "CBChPT"
+uuid = "1de96ed4-d9f2-4f1a-90f2-4bd3b4ef3449"
+authors = ["Zejian Zhuang zejian.zhuang@uv.es"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.12.6"
