@@ -20,8 +20,8 @@ end
 
 
 
-const D = 0.8
-const F = 0.46
+D = 0.8
+F = 0.46
 
 CB_one_loop = zeros(Float64, (4, 3))
 CB_one_loop[1, :] = [3/2(D+F)^2, 1/3*(5D^2-6*D*F+9F^2), 1/6*(D-3F)^2] # N
