@@ -24,3 +24,7 @@ function CBnlo(b0::Float64, bD::Float64, bF::Float64)
     C[4, :] = - [(2b0-4bF), (4b0+4bD+4bF)]
     return C
 end
+
+function CBnlo_su3(b0::Float64, bD::Float64)
+    return -2(3b0+2bD)
+end
