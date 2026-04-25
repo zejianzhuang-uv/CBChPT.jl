@@ -1,5 +1,7 @@
 module CBChPT
 
-# Write your package code here.
+include("./mB_up_to_p3.jl")
+
+export mB_up_to_p3
 
 end
