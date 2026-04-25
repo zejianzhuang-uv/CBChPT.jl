@@ -14,10 +14,14 @@ end
 
 function mB_up_to_p3(m0::Float64, LECs_dict::AbstractDict, mphi::AbstractDataFrame)
     n = size(mphi, 1)
-    mB = zeros(Float64, (n, 5) )
+    has_su3 = hasproperty(mphi, :fsu3)
+    ncol = has_su3 ? 5 : 4
+    mB = zeros(Float64, (n, ncol))
     for i in 1:n
         mB[i, 1:4] = mB_up_to_p3(m0, mphi.mpi[i], mphi.mK[i], mphi.meta[i], mphi.fpi[i], mphi.fK[i], mphi.feta[i], LECs_dict)
-        mB[i, end] = mB_up_to_p3_su3(m0, mphi.mpi, mphi.fsu3, LECs_dict)
+        if has_su3
+            mB[i, 5] = mB_up_to_p3_su3(m0, mphi.mpi[i], mphi.fsu3[i], LECs_dict)
+        end
     end
     return mB
 end
