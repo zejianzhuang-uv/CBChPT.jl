@@ -8,7 +8,7 @@ include("./mB_one_loop.jl")
 function df_mB_up_to_p3(m0::Float64, LECs_dict::AbstractDict, mphi::AbstractDataFrame)
     mB = mB_up_to_p3(m0::Float64, LECs_dict::AbstractDict, mphi::AbstractDataFrame)
     name = (size(mB, 2) ? [:mN, :mL, :mS, :mXi] : [:mN, :mL, :mS, :mXi, :mBsu3])
-    df = DataFrame(mB, )
+    df = DataFrame(mB, name)
     insertcols!(df, 1, :mpi => mphi.mpi)
     return df
 end
